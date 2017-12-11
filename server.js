@@ -28,4 +28,4 @@ my_http.createServer(function(request,response){
         }
     });
 }).listen(6000);
-sys.puts("Server Running on 8080");
+sys.puts("Server Running on 6000");
