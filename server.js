@@ -1,4 +1,4 @@
-var sys = require("sys"),
+var sys = require("util"),
 my_http = require("http"),
 path = require("path"),
 url = require("url"),
@@ -28,4 +28,4 @@ my_http.createServer(function(request,response){
         }
     });
 }).listen(6000);
-sys.puts("Server Running on 6000");
+console.log("Server Running on 6000");
