@@ -1,17 +1,11 @@
-var http = require("http");
-var server = http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/html"});
-  response.write("<!DOCTYPE "html">");
-  response.write("<html>");
-  response.write("<head>");
-  response.write("<title>Hello World Page</title>");
-  response.write("</head>");
-  response.write("<body>");
-  response.write("Hello World!");
-  response.write("</body>");
-  response.write("</html>");
-  response.end();
-});
-
-server.listen(1337);
-console.log("Server is listening");
+'use strict';
+var http = require('http');
+var port = 1337;
+ 
+http.createServer( function (req, res){
+		var body = "<h1>hai dunia, ini server node js pertama ku</h1>"
+		res.writeHead(200, {'Content-type': 'text/html'});
+		res.write(body);
+		res.end();
+	}).listen(port);
+console.log("server ini berjalan pada port "+port);
