@@ -1,10 +1,12 @@
-'use strict';
-var http = require('http');
- 
-http.createServer( function (req, res){
-		var body = "<h1>hai dunia, ini server node js pertama ku</h1>"
-		res.writeHead(200, {'Content-type': 'text/html'});
-		res.write(body);
-		res.end();
-	}).listen(port);
-console.log("berhasil");
+const http = require('http')
+
+http.createServer( (req, res) => {
+  handler(req, res,  (err) => {
+    res.statusCode = 404
+    res.end('no such location')
+  })
+}).listen(process.env.NODE_PORT, (err) => {
+  if (err) return err
+  console.log(`Listening at port ${process.env.NODE_PORT}`)
+  console.log('Press Ctrl-C to exit')
+})
